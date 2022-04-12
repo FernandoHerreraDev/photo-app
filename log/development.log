@@ -15,3 +15,573 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 3890)
 
 
+Started GET "/" for ::1 at 2022-04-12 13:19:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 3885)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20220412185111)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220412185111"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-12 19:02:22.253145"], ["updated_at", "2022-04-12 19:02:22.253145"]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-04-12 14:02:35 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 18763)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:03:23 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms | Allocations: 64180)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<WelcomeController:0x00007f9bc0125788>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.4.7) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.4.7) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.4.7) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.4.7) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.4.7) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.4.7) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.4.7) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.4.7) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.4.7) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.4.7) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.4.7) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.4.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.4.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.4.7) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.4.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.4.7) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.4.7) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.4.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.4.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.4.7) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/cookies.rb:654:in `call'
+activerecord (6.0.4.7) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.4.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-04-12 14:03:40 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms | Allocations: 64201)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<WelcomeController:0x00007f9c02b44628>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.4.7) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.4.7) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.4.7) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.4.7) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.4.7) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.4.7) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.4.7) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.4.7) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.4.7) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.4.7) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.4.7) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.4.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.4.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.4.7) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.4.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.4.7) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.4.7) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.4.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.4.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.4.7) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/cookies.rb:654:in `call'
+activerecord (6.0.4.7) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.4.7) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.4.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-04-12 14:03:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1746)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-12 14:03:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/devise-bootstrap-views-1.1.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/devise-bootstrap-views-1.1.0/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 864)
+  Rendered /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/devise-bootstrap-views-1.1.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 4208)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 17.4ms | ActiveRecord: 0.9ms | Allocations: 19027)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:04:55 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/controllers/welcome_controller.rb:2: syntax error, unexpected ':'
+...tion :authenticate_user!. only: [:index]
+...                              ^):
+  
+app/controllers/welcome_controller.rb:2: syntax error, unexpected ':'
+app/controllers/welcome_controller.rb:2: syntax error, unexpected ':'
+app/controllers/welcome_controller.rb:2: syntax error, unexpected ':'
+Started GET "/" for ::1 at 2022-04-12 14:05:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4155)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:06:25 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 5270)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:08:39 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 88)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms | Allocations: 28813)
+
+
+  
+ActionView::Template::Error (The asset "apple-touch-icon-144x144-precomposed.png" is not present in the asset pipeline.
+):
+    11: 
+    12:     <!-- For third-generation iPad with high-resolution Retina display: -->
+    13:     <!-- Size should be 144 x 144 pixels -->
+    14:     <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+    15: 
+    16:     <!-- For iPhone with high-resolution Retina display: -->
+    17:     <!-- Size should be 114 x 114 pixels -->
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2022-04-12 14:11:24 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 82)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 10840)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.
+):
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12:     <%= javascript_include_tag "application" %>
+    13: 
+    14:     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    15:     <!--[if lt IE 9]>
+  
+app/views/layouts/application.html.erb:12
+Started GET "/" for ::1 at 2022-04-12 14:11:45 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 82)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 4641)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:13:35 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 3115)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:13:37 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3111)
+
+
+Started GET "/path1" for ::1 at 2022-04-12 14:13:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/path1"):
+  
+actionpack (6.0.4.7) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.7) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.4.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-04-12 14:13:43 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 3110)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:14:14 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3107)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:14:15 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3111)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-12 14:14:18 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 727)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 6977)
+Completed 200 OK in 33ms (Views: 17.6ms | ActiveRecord: 1.0ms | Allocations: 19903)
+
+
+Started GET "/" for ::1 at 2022-04-12 14:14:21 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3112)
+
+
+Started GET "/" for ::1 at 2022-04-12 15:02:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 6027)
+
+
+  
+ActionView::Template::Error (couldn't find file 'devise_bootstrap_views' with type 'text/css'
+Checked in these paths: 
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/config
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/images
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/fonts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/vendor/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actioncable-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/activestorage-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actionview-6.0.4.7/lib/assets/compiled
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/node_modules):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12: 
+    13:     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2022-04-12 15:04:10 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 234)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1685)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 8372)
+
+
+  
+ActionView::Template::Error (couldn't find file 'devise_bootstrap_views' with type 'text/css'
+Checked in these paths: 
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/config
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/images
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/fonts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/vendor/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actioncable-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/activestorage-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actionview-6.0.4.7/lib/assets/compiled
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/node_modules):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12: 
+    13:     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2022-04-12 15:04:19 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 182)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1178)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 4488)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-12 15:05:21 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 197)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 5783)
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 17370)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-12 15:08:21 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 182)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1171)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 7000)
+
+
+  
+ActionView::Template::Error (couldn't find file 'devise_bootstrap_views' with type 'text/css'
+Checked in these paths: 
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/config
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/images
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/fonts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/vendor/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actioncable-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/activestorage-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actionview-6.0.4.7/lib/assets/compiled
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/node_modules):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12: 
+    13:     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2022-04-12 15:09:22 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 746)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 6665)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.5ms | Allocations: 24685)
+
+
+  
+ActionView::Template::Error (couldn't find file 'devise_bootstrap_views' with type 'text/css'
+Checked in these paths: 
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/config
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/images
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/fonts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/vendor/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actioncable-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/activestorage-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actionview-6.0.4.7/lib/assets/compiled
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/node_modules):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12: 
+    13:     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2022-04-12 15:11:37 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 185)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1212)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 7259)
+
+
+  
+ActionView::Template::Error (couldn't find file 'devise_bootstrap_views' with type 'text/css'
+Checked in these paths: 
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/config
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/images
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/fonts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/app/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/twitter-bootstrap-rails-5.0.0/vendor/assets/stylesheets
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actioncable-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/activestorage-6.0.4.7/app/assets/javascripts
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/actionview-6.0.4.7/lib/assets/compiled
+  /Users/fernanandoherrerapimentel/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/fernanandoherrerapimentel/Documents/Ruby_Proyects/photo-app/node_modules):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12: 
+    13:     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:10
+Started GET "/users/sign_up" for ::1 at 2022-04-12 15:11:44 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 182)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1182)
+Completed 200 OK in 105ms (Views: 100.7ms | ActiveRecord: 0.0ms | Allocations: 47556)
+
+
